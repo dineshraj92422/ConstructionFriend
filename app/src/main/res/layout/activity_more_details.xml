@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".MoreDetailsActivity">
+
+    <TextView
+        android:id="@+id/finisher"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryDarkk"
+        android:gravity="center"
+        android:text="ફિનિશરની વિગતો"
+        android:textColor="@color/colorAccent"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/paint1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/finisher"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="પેઇન્ટ (4.1%) "
+        android:textAlignment="viewStart"
+        android:textColor="@color/red"
+        android:textSize="40dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/bric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/paint1"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:text="ઇંટો (4.4%) "
+        android:textAlignment="viewStart"
+        android:textColor="@color/red"
+        android:textSize="40dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/Tiles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bric"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:text="ટાઇલ્સ (8.0%)"
+        android:textAlignment="viewStart"
+        android:textColor="@color/red"
+        android:textSize="40dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/fitting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Tiles"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimaryDarkk"
+        android:gravity="center"
+        android:text="ફિટિંગની વિગતો"
+        android:textColor="@color/colorAccent"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/Window"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fitting"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="વિંડો (3.0%)"
+        android:textAlignment="viewStart"
+        android:textColor="@color/red"
+        android:textSize="40dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/door"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Window"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:text="દરવાજા (3.4%)"
+        android:textAlignment="viewStart"
+        android:textColor="@color/red"
+        android:textSize="40dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/plumb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/door"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:text="પ્લમ્બિંગ (5.5%)"
+        android:textAlignment="viewStart"
+        android:textColor="@color/red"
+        android:textSize="40dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/Electr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/plumb"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:text="એલેટ્રિકલ (6.8%)"
+        android:textAlignment="viewStart"
+        android:textColor="@color/red"
+        android:textSize="40dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/sani"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Electr"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:text="સેનિટરી (4.1%)"
+        android:textAlignment="viewStart"
+        android:textColor="@color/red"
+        android:textSize="40dp"
+        tools:ignore="MissingConstraints" />
+
+
+</RelativeLayout>

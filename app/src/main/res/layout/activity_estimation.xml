@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    android:orientation="vertical"
+    tools:context=".EstimationActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtcalc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="બાંધકામ ખર્ચ કેલ્ક્યુલેટર"
+            android:textSize="30sp" />
+
+
+        <TextView
+            android:id="@+id/txtspinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtcalc"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="25dp"
+            android:text="શહેર"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtcalc"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/txtspinner" />
+
+        <TextView
+            android:id="@+id/txtspinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtspinner"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="25dp"
+            android:text="વિસ્તાર"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinnner"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/txtspinner" />
+
+        <TextView
+            android:id="@+id/txtbuilt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtspinner1"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="25dp"
+            android:text="ચોરસ ફુટ જગ્યા"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtarea"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtspinner1"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="13dp"
+            android:autofillHints="@string/_100"
+            android:hint="@string/enter_area_in_sq_ft"
+            android:inputType="numberDecimal"
+            android:text="@string/_100"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtcost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtbuilt"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="ચોરસ ફુટ નો ભાવ"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edtprice"
+            android:layout_width="182dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edtarea"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="5dp"
+            android:autofillHints="@string/_100"
+            android:hint="@string/enter_the_price"
+            android:inputType="numberDecimal"
+            android:text="@string/_100"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btncalc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtprice"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/button_gradient"
+            android:text="@string/calculate"
+            android:textColor="@color/yellow"
+            android:textSize="25sp"
+            app:backgroundTint="@android:color/holo_orange_dark" />
+
+        <TextView
+            android:id="@+id/txtresult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btncalc"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:hint="@string/result"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/txtcem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtresult"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="સિમેન્ટ (16.4%)"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtsand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtcem"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="રેતી (12.3%)"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtagg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtsand"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="કપચી (7.4%)"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtsteel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtagg"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="સ્ટીલ (24.6%)"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtfin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtsteel"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="ફિનિશિંગ (16.5%)"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtmored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtfin"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/more_details"
+            android:textColor="@color/yellow"
+            android:textColorLink="@color/teal_200"
+            android:textSize="24sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/txtfit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtmored"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="ફીટીંગ (22.8%)"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtmorede"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtfit"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="11dp"
+            android:text="@string/more_details1"
+            android:textColor="@color/yellow"
+            android:textColorLink="@color/teal_200"
+            android:textSize="24sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/transport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtmorede"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:text="ટ્રાન્સપોર્ટ"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtceme"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtresult"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="30dp"
+            android:background="#428BCA"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtsandd"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtceme"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="#89C4F4"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtaggr"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtsandd"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="#DFBA49"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtsteell"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtaggr"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="#45B6AF"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtfini"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtsteell"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="#F3565D"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtfitt"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtmored"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="39dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="#45B6AF"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/transcolor"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtmorede"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="30dp"
+            android:background="#DD293E"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/transport"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:text="-- જરૂરી સામગ્રીની માત્રા --"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/quantity"
+            android:layout_marginTop="10dp"
+            android:text="સિમેન્ટ"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/sand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cement"
+            android:layout_marginTop="10dp"
+            android:text="રેતી"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/aggregate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sand"
+            android:layout_marginTop="10dp"
+            android:text="કપચી"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/steel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/aggregate"
+            android:layout_marginTop="10dp"
+            android:text="સ્ટીલ"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/paint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/steel"
+            android:layout_marginTop="10dp"
+            android:text="પેઇન્ટ"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/bricks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/paint"
+            android:layout_marginTop="10dp"
+            android:text="ઇંટો"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/flooring"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bricks"
+            android:layout_marginTop="10dp"
+            android:text="ફ્લોરિંગ"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/cementbag"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/quantity"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="12dp"
+            android:background="#428BCA"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/sandton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cementbag"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="12dp"
+            android:background="#89C4F4"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/aggrton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sandton"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="12dp"
+            android:background="#DFBA49"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/steelkg"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/aggrton"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="12dp"
+            android:background="#45B6AF"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/paintlt"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/steelkg"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="12dp"
+            android:background="#F3565D"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/brickscs"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/paintlt"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="12dp"
+            android:background="#45B6AF"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/flooringft"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/brickscs"
+            android:layout_alignParentEnd="false"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="10dp"
+            android:background="#DD293E"
+            android:gravity="end"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/btncalc"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/txtresult"
+            app:srcCompat="@drawable/ic_rupee"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/txtresult"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            app:srcCompat="@drawable/ic_rupee"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/txtsandd"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            app:srcCompat="@drawable/ic_rupee"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/txtaggr"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            app:srcCompat="@drawable/ic_rupee"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/txtsteell"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            app:srcCompat="@drawable/ic_rupee"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/txtmored"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            app:srcCompat="@drawable/ic_rupee"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/txtmorede"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            app:srcCompat="@drawable/ic_rupee"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/txtceme"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            app:srcCompat="@drawable/ic_rupee"
+            tools:ignore="VectorDrawableCompat" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/edtarea"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toEndOf="@id/edtprice"
+            app:srcCompat="@drawable/ic_rupee"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtspinner1"
+            android:layout_alignEnd="@id/edtarea"
+            android:layout_marginTop="23dp"
+            android:layout_marginEnd="-57dp"
+            android:text="sq. ft"
+            android:textAlignment="viewStart"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/quantity"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/cementbag"
+            android:background="#428BCA"
+            android:text="Bags"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sandton"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/cementbag"
+            android:background="#428BCA"
+            android:text="Ton"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cementbag"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/cementbag"
+            android:background="#428BCA"
+            android:text="Ton"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/aggrton"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/cementbag"
+            android:background="#428BCA"
+            android:text="Kg"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/steelkg"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/cementbag"
+            android:background="#428BCA"
+            android:text="Lt"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/paintlt"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/cementbag"
+            android:background="#428BCA"
+            android:text="Pcs."
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/brickscs"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/cementbag"
+            android:background="#428BCA"
+            android:text="Sq. Ft"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+</ScrollView>
